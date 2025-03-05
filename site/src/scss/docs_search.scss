@@ -5,14 +5,13 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-@import "../../../scss/config";
-@import "../../../scss/colors";
-@import "../../../scss/functions";
-@import "../../../scss/mixins";
-@import "../../../scss/variables";
-@import "../../../scss/layout/breakpoints";
-@import "variables";
- 
-@import "@docsearch/css/dist/style";
-@import "search";
- 
+// @import "../../../scss/config";
+// @import "../../../scss/colors";
+// @import "../../../scss/functions";
+// @import "../../../scss/mixins";
+// @import "../../../scss/variables";
+// @import "../../../scss/layout/breakpoints";
+// @use "variables" as *;
+
+@use "@docsearch/css/dist/style" as *;
+@use "search" as *;
