@@ -18,6 +18,10 @@ interface Props {
    */
   class?: string
   /**
+   * The CSS style(s) to be added to the preview wrapping `div` element.
+   */
+  style?: string
+  /**
    * The preview wrapping `div` element ID.
    */
   id?: string
@@ -42,6 +46,7 @@ const {
   addStackblitzJs = false,
   code,
   class: className,
+  style,
   id,
   lang = 'html',
   showMarkup = true,
@@ -67,7 +72,7 @@ const simplifiedMarkup = markup
     <Code code={simplifiedMarkup} containerClass="bd-example-snippet" lang={lang}>
       {showPreview && (
         <Fragment slot="pre">
-          <div id={id} class:list={['bd-example', className]}>
+          <div id={id} class:list={['bd-example', className]} style={style}>
             <Fragment set:html={markup} />
           </div>
           <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
