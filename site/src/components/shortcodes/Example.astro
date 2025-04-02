@@ -69,13 +69,13 @@ const simplifiedMarkup = markup
 
 {
   showMarkup ? (
-    <Code code={simplifiedMarkup} containerClass="bd-example-snippet" lang={lang}>
+    <Code code={simplifiedMarkup} containerClass="bd-example-snippet" lang={lang} theme="dark">
       {showPreview && (
         <Fragment slot="pre">
           <div id={id} class:list={['bd-example', className]} style={style}>
             <Fragment set:html={markup} />
           </div>
-          <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1" data-bs-theme="dark">
             <small class="font-monospace text-body-secondary text-uppercase">{lang}</small>
             <div class="d-flex ms-auto">
               <button

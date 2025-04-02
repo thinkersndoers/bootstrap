@@ -394,9 +394,10 @@
 
 .highlight-toolbar {
   background-color: var(--bd-pre-bg);
+  border-bottom: 1px solid var(--bs-border-color);
 }
 
-.bd-scss-docs {
+.bd-file-ref {
   .highlight-toolbar {
     @include border-top-radius(calc(var(--bs-border-radius) + 1px));
   }

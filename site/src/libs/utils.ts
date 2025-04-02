@@ -1,6 +1,8 @@
 import { slug } from 'github-slugger'
 import fromMarkdown from 'mdast-util-from-markdown'
 import toString from 'mdast-util-to-string'
+import { remark } from 'remark'
+import remarkHtml from 'remark-html'
 
 export function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
@@ -33,4 +35,12 @@ export function trimLeadingAndTrailingSlashes(str: string) {
 
 export function stripMarkdown(str: string) {
   return toString(fromMarkdown(str))
+}
+
+export function processMarkdownToHtml(markdown: string): string {
+  // Use remark to process markdown to HTML
+  const result = remark()
+    .use(remarkHtml)
+    .processSync(markdown)
+  return result.toString()
 }
